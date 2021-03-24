@@ -1,9 +1,7 @@
 Training
 =========
 
-Entry-point for train
----------------------
-``src/train.py``
+Entry-point for train ``src/train.py``
 
 ::
 

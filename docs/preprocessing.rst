@@ -16,8 +16,6 @@ Entry point for pre-processing
 
    -  Creates ``fuel_load.nc`` file for Fuel Load Data (Burned Area \*
       Above Ground Biomass).
-   -  Creates ``combined_dataset.nc`` file combining all the input
-      features being used.
    -  Saves the following files for the Tropics & Mid-Latitudes regions
       respectively, where {type} is 'tropics' or 'midlats'.
    -  Save Directory ``root_path/{type}`` ::

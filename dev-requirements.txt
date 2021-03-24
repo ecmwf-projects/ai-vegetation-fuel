@@ -1,0 +1,4 @@
+pre-commit==2.11.1
+sphinx==3.5.3
+sphinx-autoapi==1.5.1
+sphinx-rtd-theme==0.5.1

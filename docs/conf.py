@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "smos-fuel"
-copyright = "2021, Wikilimo"
-author = "Wikilimo"
+project = "ml-fuel"
+copyright = "2021, Wikilimo Ltd., London, UK"
+author = "Wikilimo Ltd., London, UK"
 
 # The full version, including alpha/beta/rc tags
 release = "0.1"

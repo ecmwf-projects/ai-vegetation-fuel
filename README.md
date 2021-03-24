@@ -1,4 +1,4 @@
-# smosFuel: Predicting Wildfire Fuel Load using SMOS derived Products
+# ml-fuel: Predicting Fuel Load for Wildfire Modelling
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Documentation Status](https://readthedocs.org/projects/ml-fuel/badge/?version=latest)](https://ml-fuel.readthedocs.io/en/latest/?badge=latest)
@@ -10,8 +10,8 @@ The python environment for the repository can be created using **either** `conda
 #### Using conda
 
 ```bash
-conda create --name=smos-fuel python=3.8
-conda activate smos-fuel
+conda create --name=ml-fuel python=3.8
+conda activate ml-fuel
 ```
 
 #### Using virtualenv

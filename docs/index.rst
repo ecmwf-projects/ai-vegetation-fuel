@@ -1,13 +1,12 @@
-.. smos-fuel documentation master file, created by
+.. ml-fuel documentation master file, created by
    sphinx-quickstart on Wed Mar 24 22:41:35 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-smos-fuel: Predicting Fuel Load with Machine Learning on Climate Data
+ml-fuel: Predicting Fuel Load with Machine Learning on Climate Data
 ======================================================================
 
-We use SMOS derived products along with other climatic and topographical data
-to predict Fuel Load, which embodies the content of burnable vegetation in an area.
+We use earth observation data with Machine Learning to predict Fuel Load, which embodies the content of burnable vegetation in an area.
 
 Two models are developed, for the Mid-Latitudes and the Tropics using Gradient Boosted
 Decision Tree style Machine Learning methods. We can see below a visual comparison of the

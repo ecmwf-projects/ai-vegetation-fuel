@@ -13,8 +13,8 @@ Using conda
 
 .. code:: bash
 
-    conda create --name=smos-fuel python=3.8
-    conda activate smos-fuel
+    conda create --name=ml-fuel python=3.8
+    conda activate ml-fuel
 
 Using virtualenv
 ^^^^^^^^^^^^^^^^

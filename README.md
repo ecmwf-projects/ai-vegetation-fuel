@@ -1,6 +1,7 @@
 # smosFuel: Predicting Wildfire Fuel Load using SMOS derived Products
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Documentation Status](https://readthedocs.org/projects/ml-fuel/badge/?version=latest)](https://ml-fuel.readthedocs.io/en/latest/?badge=latest)
 
 ### Getting Started
 

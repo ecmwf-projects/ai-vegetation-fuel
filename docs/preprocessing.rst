@@ -9,7 +9,7 @@ Entry point for pre-processing
 
    -  ``src/utils/data_paths.py`` - defines the files paths for the
       features used in training and also the paths of the
-      ``fuel_load.nc`` and ``combined_dataset.nc`` which will be
+      ``fuel_load.nc`` which will be
       created.
 
 -  Output:

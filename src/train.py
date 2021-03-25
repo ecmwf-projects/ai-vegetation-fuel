@@ -28,6 +28,7 @@ from models.lightgbm_module import LightGBM
 import neptune
 from joblib import dump
 import argparse
+from pathlib import Path
 
 LIST_FILE_NAMES = [
     "train",
@@ -90,6 +91,7 @@ if __name__ == "__main__":
 
     # Get current working directory
     cwd = os.getcwd()
+    cwd = str(Path(cwd).parent.absolute())
 
     print(
         "Model file save at",

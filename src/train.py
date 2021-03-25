@@ -90,7 +90,6 @@ if __name__ == "__main__":
 
     # Get current working directory
     cwd = os.getcwd()
-    cwd = cwd[: cwd.find("deepfuel-ML") + len("deepfuel-ML")]
 
     print(
         "Model file save at",

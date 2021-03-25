@@ -133,3 +133,9 @@ dmypy.json
 
 # docs
 *_build
+
+# training/testing data
+data/
+
+# catboost logs
+*catboost_info/

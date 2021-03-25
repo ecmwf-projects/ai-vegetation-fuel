@@ -119,7 +119,7 @@ class CatBoost:
         train_pool = Pool(X_train, y_train, cat_features=["climatic_region", "month"])
         val_pool = Pool(X_val, y_val, cat_features=["climatic_region", "month"])
 
-        cbr = cb.CatBoostRegressor(**params, task_type="GPU", allow_writing_files=True)
+        cbr = cb.CatBoostRegressor(**params, allow_writing_files=True)
         self.model = cbr.fit(
             train_pool,
             eval_set=val_pool,

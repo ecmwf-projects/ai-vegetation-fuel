@@ -28,8 +28,8 @@ from models.lightgbm_module import LightGBM
 import neptune
 from joblib import dump
 import argparse
-from pathlib import Path
 
+REPO = "ml-fuel"
 LIST_FILE_NAMES = [
     "train",
     "val",
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
     # Get current working directory
     cwd = os.getcwd()
-    cwd = str(Path(cwd).parent.absolute())
+    cwd = cwd[: cwd.find(REPO) + len(REPO)]
 
     print(
         "Model file save at",

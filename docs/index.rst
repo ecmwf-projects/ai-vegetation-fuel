@@ -36,6 +36,7 @@ can be found in the Module API docs in the index below.
    training
    testing
    extend
+   docker
 
 
 Indices and tables

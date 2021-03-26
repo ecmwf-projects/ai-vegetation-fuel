@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  ml-fuel:
+    container_name: ml-fuel_app
+    image: wikilimo/ml-fuel:latest
+    build:
+      args:
+        - USER_ID=${UID}
+        - GROUP_ID=${GID}
+        - USER=${USER}
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "4242:4242"
+    volumes:
+      - ../src:$HOME/ml-fuel/src
+      - ../demo-notebooks:$HOME/ml-fuel/demo-notebooks
+      - ../README.md:$HOME/ml-fuel/README.md
+      - ../data:$HOME/ml-fuel/data
+    init: true
+    stdin_open: true
+    tty: true 

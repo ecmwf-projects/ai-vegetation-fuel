@@ -1,0 +1,6 @@
+.vscode
+.git
+.gitignore
+.flake8
+.pre-commit-config.yaml
+docs

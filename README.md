@@ -124,3 +124,8 @@ Notebooks for training and inference:
 - Match the features of the new dataset with the existing features. This can be done by going through `src/EDA/EDA_pre-processed_data.ipynb`.
 - Add the feature path as a variable to `src/utils/data_paths.py`. Further the path variable is needed to be added to either the time dependant or independant list (depending on which category it belongs to) present inside `export_feature_paths()`.
 - The model will now also be trained on the added feature while running src/train.py!
+
+## Info
+This repository was developed by Anurag Saha Roy (@lazyoracle) and Roshni Biswas (@roshni-b) for the ESA-SMOS-2020 project. The repository is now maintained by the Wildfire Danger Forecasting team at the European Centre for Medium-range Weather Forecast.
+
+Documentation is available at: [https://ml-fuel.readthedocs.io/en/latest/index.html](https://ml-fuel.readthedocs.io/en/latest/index.html).

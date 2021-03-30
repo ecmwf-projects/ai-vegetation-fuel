@@ -107,10 +107,10 @@ Pre-trained models are available at:
 
 ### Demo Notebooks
 Notebooks for training and inference:
-- [LightGBM_training.ipynb](demo-notebooks/LightGBM_training.ipynb)
-- [LightGBM_inference.ipynb](demo-notebooks/LightGBM_inference.ipynb)
-- [CatBoost_training.ipynb](demo-notebooks/CatBoost_training.ipynb)
-- [CatBoost_inference.ipynb](demo-notebooks/CatBoost_inference.ipynb)
+- [light_gbm_training.ipynb](notebooks/light_gbm_training.ipynb)
+- [light_gbm_inference.ipynb](notebooks/light_gbm_inference.ipynb)
+- [cat_boost_training.ipynb](notebooks/cat_boost_training.ipynb)
+- [cat_boost_inference.ipynb](notebooks/cat_boost_inference.ipynb)
 
 ## Fuel Load Prediction Visualizations:
 - CatBoost for Mid-Latitudes

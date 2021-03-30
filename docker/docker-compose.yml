@@ -15,7 +15,7 @@ services:
       - "4242:4242"
     volumes:
       - ../src:$HOME/ml-fuel/src
-      - ../demo-notebooks:$HOME/ml-fuel/demo-notebooks
+      - ../notebooks:$HOME/ml-fuel/notebooks
       - ../README.md:$HOME/ml-fuel/README.md
       - ../data:$HOME/ml-fuel/data
     init: true

@@ -10,7 +10,7 @@ data_root_path = input("\nEnter root directory where data is stored: ")
 assert os.path.exists(data_root_path) is not False, "Root Directory doesn't exist."
 
 # import file paths
-agb_data,ba_data,fuel_load_data,combined_data = export_data_paths()
+agb_data, ba_data, fuel_load_data, combined_data = export_data_paths()
 
 # path to data files
 agb_data_path = data_root_path + agb_data
@@ -33,13 +33,25 @@ print("Processing data for the Tropics region...\n")
 tropic_train, tropic_val, tropic_test = tropics_dataset(
     df_train, df_val, df_test, data_root_path
 )
-print("Training, Validation and Testing datasets for the Tropics region dataset created, and saved to:", data_root_path + "/tropics.")
-print("Monthly Inference datasets for the Tropics region created, and saved to:", data_root_path + "/infer_tropics. \n")
+print(
+    "Training, Validation and Testing datasets for the Tropics region dataset created, and saved to:",
+    data_root_path + "/tropics.",
+)
+print(
+    "Monthly Inference datasets for the Tropics region created, and saved to:",
+    data_root_path + "/infer_tropics. \n",
+)
 
 print("Processing data for the Mid-Latitudes region...\n")
-#handling midlats
+# handling midlats
 midlat_train, midlat_val, midlat_test = midlats_dataset(
     df_train, df_val, df_test, data_root_path
 )
-print("Training, Validation and Testing datasets for the Mid-Latitudes region dataset created, and saved to:", data_root_path + "/midlats.")
-print("Monthly Inference datasets for the Mid-Latitudes region created, and saved to:", data_root_path + "/infer_midlats.\n")
+print(
+    "Training, Validation and Testing datasets for the Mid-Latitudes region dataset created, and saved to:",
+    data_root_path + "/midlats.",
+)
+print(
+    "Monthly Inference datasets for the Mid-Latitudes region created, and saved to:",
+    data_root_path + "/infer_midlats.\n",
+)

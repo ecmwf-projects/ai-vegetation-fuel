@@ -113,11 +113,12 @@ Notebooks for training and inference:
 - [CatBoost_inference.ipynb](demo-notebooks/CatBoost_inference.ipynb)
 
 ## Fuel Load Prediction Visualizations:
-- CatBoost for Mid-Latitudes
-<img width="800" alt="CatBoost sample prediction" src="https://user-images.githubusercontent.com/7680686/110631732-da41f800-81cc-11eb-8ffe-ca47a6269ea9.png">
 
-- LightGBM for Tropics
-<img width="800" alt="Tropics sample prediction" src="https://user-images.githubusercontent.com/7680686/110631830-f3e33f80-81cc-11eb-92f8-dd0d24543796.png">
+- CatBoost Model prediction in the Mid-Latitudes region
+<img width="1025" alt="midlats-readme" src="https://user-images.githubusercontent.com/7680686/113136551-1f43d200-9241-11eb-9e3f-5af9e2169fca.png">
+
+- LightGBM Model prediction in the Tropics region
+<img width="1025" alt="tropics-readme" src="https://user-images.githubusercontent.com/7680686/113136534-1c48e180-9241-11eb-81ad-7b81b83169ee.png">
 
 ## Adding New Features:
 - Make sure the new dataset to be added is a single file in `.nc` format, containing data from 2010-16 and in 0.25x0.25 grid cell resolution.

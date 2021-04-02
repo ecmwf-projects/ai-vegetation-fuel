@@ -34,6 +34,7 @@ from joblib import load
 import argparse
 
 SCALER_FILENAME = "scaler.save"  # Save name for sklearn transform file
+MONTH = ["July", "Aug", "Sept", "Oct", "Nov", "Dec"]  # month list
 
 
 def inference(
@@ -106,13 +107,13 @@ def inference(
                 * 100,
             }
         )
-        print(
-            "MAPE ",
-            month,
-            " :",
+        mape = (
             np.mean(np.abs((df_test.actual_load - y_pred_inv) / df_test.actual_load))
-            * 100,
+            * 100
         )
+        if path_df is not None:
+            output_df.to_csv(path_df, index=False)
+        return mape
 
     else:
         scaler_filename = SCALER_FILENAME
@@ -128,8 +129,8 @@ def inference(
                 "predicted_load": y_pred_inv,
             }
         )
-    if path_df is not None:
-        output_df.to_csv(path_df, index=False)
+        if path_df is not None:
+            output_df.to_csv(path_df, index=False)
 
 
 if __name__ == "__main__":
@@ -169,6 +170,7 @@ if __name__ == "__main__":
 
     model = load(model_path)
     file_list = os.listdir(datadir)
+    mape_dict = {}
     for csv_file_path in file_list:
         if csv_file_path.endswith(".csv"):
 
@@ -195,7 +197,7 @@ if __name__ == "__main__":
                 has_groundtruth = True
             else:
                 has_groundtruth = False
-            inference(
+            mape_dict[month] = inference(
                 month=month,
                 regr=model,
                 df_test=df,
@@ -203,6 +205,8 @@ if __name__ == "__main__":
                 path_df=output_file_path_pred,
                 test=has_groundtruth,
             )
+    for mnth in MONTH:
+        print("MAPE", mnth, ":", mape_dict[mnth])
 
     # Map plot generation
     file_list = os.listdir(result_dir)

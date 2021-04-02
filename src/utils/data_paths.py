@@ -1,4 +1,4 @@
-"""This script allows easy modification of features/files and their data paths or their versions.
+"""This script stores the data paths with their versions.
 """
 from typing import List, Tuple
 

@@ -3,8 +3,18 @@ from utils.data_split_by_region import tropics_dataset, midlats_dataset
 from utils.fuelload import fuelload
 from utils.data_paths import export_data_paths
 import os
+import argparse
 
-data_root_path = input("\nEnter root directory where data is stored: ")
+parser = argparse.ArgumentParser(description="Data Preprocessing")
+parser.add_argument(
+    "--data_path",
+    metavar="d",
+    help="Path to the data files",
+    required=True,
+)
+args = parser.parse_args()
+
+data_root_path = args.data_path
 
 # check file path entered
 assert os.path.exists(data_root_path) is not False, "Root Directory doesn't exist."
@@ -13,8 +23,8 @@ assert os.path.exists(data_root_path) is not False, "Root Directory doesn't exis
 agb_data, ba_data, fuel_load_data, combined_data = export_data_paths()
 
 # path to data files
-agb_data_path = data_root_path + agb_data
-burned_area_data_path = data_root_path + ba_data
+agb_data_path = os.path.join(data_root_path, agb_data)
+burned_area_data_path = os.path.join(data_root_path, ba_data)
 fuel_load_data_path = data_root_path + fuel_load_data
 
 # creating fuel_load datafile

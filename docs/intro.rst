@@ -39,8 +39,8 @@ Pre-trained models
 ------------------
 
 Pre-trained models are available:
- - ``LightGBM.joblib`` at ``src/results/pre-trained_models/LightGBM.joblib``
- - ``CatBoost.joblib`` at ``src/results/pre-trained_models/CatBoost.joblib``
+ - ``LightGBM.joblib`` at ``src/pre-trained_models/LightGBM.joblib``
+ - ``CatBoost.joblib`` at ``src/pre-trained_models/CatBoost.joblib``
 
 Demo Notebooks
 ---------------

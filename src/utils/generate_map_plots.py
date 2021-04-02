@@ -55,11 +55,8 @@ def generate_plots(
             title="Actual Fuel Load Estimate for " + month + " 2016",
         )
 
-        img_bytes_act = fig_act.to_image(format="png", engine="kaleido")
+        fig_act.write_html(output_file_path_act)
 
-        f_act = open(output_file_path_act, "wb")
-        f_act.write(img_bytes_act)
-        f_act.close()
         print(
             "Actual FL plot successfully generated! File saved to ",
             output_file_path_act,
@@ -81,11 +78,8 @@ def generate_plots(
             title="Predicted Fuel Load Estimate for " + month + " 2016",
         )
 
-        img_bytes_pred = fig_pred.to_image(format="png", engine="kaleido")
+        fig_pred.write_html(output_file_path_pred)
 
-        f_pred = open(output_file_path_pred, "wb")
-        f_pred.write(img_bytes_pred)
-        f_pred.close()
         print(
             "Predicted FL plot successfully generated! File saved to ",
             output_file_path_pred,

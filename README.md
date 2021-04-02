@@ -98,15 +98,16 @@ Entry-point for inference is [src/test.py](src/test.py)
 ```
 Args description:
       * `--model_name`:  Name of the model to be trained ("CatBoost" or "LightGBM").
-      * `--model_path`:  Path to the pre-trained .joblib model.
+      * `--model_path`:  Path to the pre-trained .
+      model.
       * `--data_path`:  Valid data directory where all the test .csv files are stored.
       * `--results_path`:  Directory where the result inference .csv files and .png visualizations are going to be stored.
 ```
 
 ### Pre-trained models
 Pre-trained models are available at:
-- [LightGBM.joblib](src/results/pre-trained_models/LightGBM.joblib)
-- [CatBoost.joblib](src/results/pre-trained_models/CatBoost.joblib)
+- [LightGBM.joblib](src/pre-trained_models/LightGBM.joblib)
+- [CatBoost.joblib](src/pre-trained_models/CatBoost.joblib)
 
 
 ### Demo Notebooks

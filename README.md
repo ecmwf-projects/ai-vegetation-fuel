@@ -31,7 +31,7 @@ pip install -r requirements.txt
 This includes all the packages required for running the code in the repository.
 
 ### Data Description
-7 years of global historical data, from 2010 - 2016 will be used for developing the machine learning models. All data used in this project is propietary and NOT meant for public release. Xarray and netCDF libraries are used for working with the multi-dimensional geospatial data.
+7 years of global historical data, from 2010 - 2016 will be used for developing the machine learning models. All data used in this project is propietary and NOT meant for public release. Xarray, NumPy and netCDF libraries are used for working with the multi-dimensional geospatial data.
   - **Datasets**:
     - Above Ground Biomass
     - Weather Anomalies
@@ -52,12 +52,16 @@ The data split into training, testing and validation is currently:
  - Validation: January 2016 -> June 2016
  - Testing: July 2016 -> December 2016.
 
-To change the split, modify `data_split()` in `generate_io_arrays.py`.
+To change the split, modify `data_split()` in `src/utils/generate_io_arrays.py`, and the month list in `src/test.py` used during inference.
 
 ## Pre-processing
-Entry point for pre-processing is [src/pre-processing.py](src/pre-processing.py).
-
- - Input: Enter the root directory of the xarray data files when prompted. All data files produced are stored in this directory.
+Raw data should first be processed using notebooks in `notebooks/preprocess/*`.
+Entry point for the pre-processing script for the ML pipeline is [src/pre-processing.py](src/pre-processing.py).
+```
+Args description:
+      * `--data_path`:  Path to the data files.
+```
+ - Input: Enter the root directory of the xarray data files as the script argument. All data files produced are stored in this directory.
      - `src/utils/data_paths.py` - defines the files paths for the features used in training and the paths of `fuel_load.nc` which will be created.
  - Output:
      - Creates `fuel_load.nc` file for Fuel Load Data (Burned Area * Above Ground Biomass).
@@ -107,21 +111,29 @@ Pre-trained models are available at:
 
 ### Demo Notebooks
 Notebooks for training and inference:
-- [LightGBM_training.ipynb](demo-notebooks/LightGBM_training.ipynb)
-- [LightGBM_inference.ipynb](demo-notebooks/LightGBM_inference.ipynb)
-- [CatBoost_training.ipynb](demo-notebooks/CatBoost_training.ipynb)
-- [CatBoost_inference.ipynb](demo-notebooks/CatBoost_inference.ipynb)
+- [LightGBM_training.ipynb](notebooks/LightGBM_training.ipynb)
+- [LightGBM_inference.ipynb](notebooks/LightGBM_inference.ipynb)
+- [CatBoost_training.ipynb](notebooks/CatBoost_training.ipynb)
+- [CatBoost_inference.ipynb](notebooks/CatBoost_inference.ipynb)
 
 ## Fuel Load Prediction Visualizations:
+- CatBoost for Mid-Latitudes
+<img width="1025" alt="midlats-prediction-july16" src="https://user-images.githubusercontent.com/7680686/113362982-4d263500-936d-11eb-922e-5a0609e7a67e.png">
 
-- CatBoost Model prediction in the Mid-Latitudes region
-<img width="1025" alt="midlats-readme" src="https://user-images.githubusercontent.com/7680686/113136551-1f43d200-9241-11eb-9e3f-5af9e2169fca.png">
+- LightGBM for Tropics
+<img width="1025" alt="tropics-prediction-july16" src="https://user-images.githubusercontent.com/7680686/113362967-45ff2700-936d-11eb-93a3-5ad380393f03.png">
 
-- LightGBM Model prediction in the Tropics region
-<img width="1025" alt="tropics-readme" src="https://user-images.githubusercontent.com/7680686/113136534-1c48e180-9241-11eb-81ad-7b81b83169ee.png">
 
 ## Adding New Features:
 - Make sure the new dataset to be added is a single file in `.nc` format, containing data from 2010-16 and in 0.25x0.25 grid cell resolution.
-- Match the features of the new dataset with the existing features. This can be done by going through `src/EDA/EDA_pre-processed_data.ipynb`.
+- Match the features of the new dataset with the existing features. This can be done by going through `notebooks/EDA_pre-processed_data.ipynb`.
 - Add the feature path as a variable to `src/utils/data_paths.py`. Further the path variable is needed to be added to either the time dependant or independant list (depending on which category it belongs to) present inside `export_feature_paths()`.
 - The model will now also be trained on the added feature while running src/train.py!
+
+
+## Documentation
+Documentation is available at: [https://ml-fuel.readthedocs.io/en/latest/index.html](https://ml-fuel.readthedocs.io/en/latest/index.html).
+
+
+## Info
+This repository was developed by Anurag Saha Roy (@lazyoracle) and Roshni Biswas (@roshni-b) for the ESA-SMOS-2020 project. Contact email: `info@wikilimo.co`. The repository is now maintained by the Wildfire Danger Forecasting team at the European Centre for Medium-range Weather Forecast.

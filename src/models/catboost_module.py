@@ -16,6 +16,7 @@ BOOTSTRAP_TYPE = "Bernoulli"
 SUBSAMPLE = 0.9979455997654413
 EARLY_STOP = 20
 VERBOSE_EVAL = 1
+RANDOM_SEED = 0
 
 # Save file name for sklearn transform
 SCALER_FILENAME = "scaler.save"
@@ -66,6 +67,7 @@ class CatBoost:
             "subsample": SUBSAMPLE,
             "verbose": VERBOSE_EVAL,
             "early_stopping_rounds": EARLY_STOP,
+            "random_seed": RANDOM_SEED,
         }
 
     def dataloader(self):
@@ -149,7 +151,7 @@ class CatBoost:
         val_pred = self.model.predict((self.X_val))
         test_pred = self.model.predict((self.X_test))
         print("-----------------------------------------------------------------")
-        print("Inference results", "\n")
+        print("Training results", "\n")
         if self.transform is not None:
             scaler = PowerTransformer(method="box-cox")
             scaler.fit(np.array(self.train.actual_load).reshape(-1, 1))
@@ -167,6 +169,9 @@ class CatBoost:
                 mse(self.val.actual_load, inv_val_pred, squared=False),
             )
             print("Test error: ", mse(self.y_test, inv_test_pred, squared=False))
+            print(
+                "Note : The error printed above is calculated after the inverse transform of box-cox"
+            )
 
         else:
             print("Training error: ", mse(self.y_train, train_pred, squared=False))

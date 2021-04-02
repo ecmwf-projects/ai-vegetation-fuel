@@ -19,6 +19,7 @@ METRIC = "RMSE"
 OBJECTIVE = "regression"
 EARLY_STOP = 20
 VERBOSE_EVAL = 1
+RANDOM_STATE = 0
 
 
 class LightGBM:
@@ -65,6 +66,7 @@ class LightGBM:
             "early_stopping_rounds": EARLY_STOP,
             "objective": OBJECTIVE,
             "verbose": VERBOSE_EVAL,
+            "random_state": RANDOM_STATE,
         }
 
     def dataloader(self):
@@ -141,7 +143,7 @@ class LightGBM:
         val_pred = self.model.predict((self.X_val))
         test_pred = self.model.predict((self.X_test))
         print("-----------------------------------------------------------------")
-        print("Inference results", "\n")
+        print("Training results", "\n")
         print("Training error: ", mse(self.y_train, train_pred, squared=False))
         print("Validation error: ", mse(self.y_val, val_pred, squared=False))
         print("Test error: ", mse(self.y_test, test_pred, squared=False))

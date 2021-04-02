@@ -23,7 +23,7 @@ predictions made by the model and corresponding ground truth.
 We recommend you go through the Getting Started section to first set up your development environment.
 Once you have the input data (as ``.nc`` NetCDF files) and the dependencies installed,
 you can either refer to the example notebooks
-in ``demo-notebooks/`` or go through the further notes on preprocessing, training and testing. More details
+in ``notebooks/`` or go through the further notes on preprocessing, training and testing. More details
 can be found in the Module API docs in the index below.
 
 .. toctree::
@@ -34,7 +34,11 @@ can be found in the Module API docs in the index below.
    data
    preprocessing
    training
+   CatBoost_training
+   LightGBM_training
    testing
+   CatBoost_inference
+   LightGBM_inference
    extend
    docker
 
@@ -45,3 +49,8 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. note::
+   This repository was developed by Anurag Saha Roy (@lazyoracle) and Roshni Biswas (@roshni-b) for the ESA-SMOS-2020 project.
+   Contact email: `info@wikilimo.co`. The repository is now maintained by the Wildfire Danger Forecasting team at the
+   European Centre for Medium-range Weather Forecast.

@@ -1,11 +1,14 @@
 Pre-processing
 ===============
 
-Entry point for pre-processing
-``src/pre-processing.py``
+Raw data should first be processed using notebooks in :code:`notebooks/preprocess/*`.
+Entry point for the pre-processing script for the ML pipeline is :code:`src/pre-processing.py`.
 
--  Input: Enter the root directory of the xarray data files when
-   prompted. All data files produced are stored in this directory.
+Args description:
+   *``--data_path``:  Path to the data files
+
+-  Input: Enter the root directory of the xarray data files as the script argument.
+   All data files produced are stored in this directory.
 
    -  ``src/utils/data_paths.py`` - defines the files paths for the
       features used in training and also the paths of the

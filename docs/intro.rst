@@ -39,14 +39,14 @@ Pre-trained models
 ------------------
 
 Pre-trained models are available:
- - ``LightGBM.joblib`` at ``src/results/pre-trained_models/LightGBM.joblib``
- - ``CatBoost.joblib`` at ``src/results/pre-trained_models/CatBoost.joblib``
+ - ``LightGBM.joblib`` at ``src/pre-trained_models/LightGBM.joblib``
+ - ``CatBoost.joblib`` at ``src/pre-trained_models/CatBoost.joblib``
 
 Demo Notebooks
 ---------------
 
 Notebooks for training and inference:
- - ``LightGBM_training.ipynb`` at ``demo-notebooks/LightGBM_training.ipynb``
- - ``LightGBM_inference.ipynb`` at  ``demo-notebooks/LightGBM_inference.ipynb``
- - ``CatBoost_training.ipynb`` at ``demo-notebooks/CatBoost_training.ipynb``
- - ``CatBoost_inference.ipynb`` at  ``demo-notebooks/CatBoost_inference.ipynb``
+ - ``LightGBM_training.ipynb`` at ``notebooks/LightGBM_training.ipynb``
+ - ``LightGBM_inference.ipynb`` at  ``notebooks/LightGBM_inference.ipynb``
+ - ``CatBoost_training.ipynb`` at ``notebooks/CatBoost_training.ipynb``
+ - ``CatBoost_inference.ipynb`` at  ``notebooks/CatBoost_inference.ipynb``

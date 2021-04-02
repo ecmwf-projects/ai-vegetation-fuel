@@ -12,7 +12,7 @@ calculating error values to plotting data for visual inference.
     import pandas as pd
     import numpy as np
     from joblib import dump, load
-    from IPython.display import Image, display
+    from IPython.display import Image, display, HTML
 
 Using ``test.py``
 ~~~~~~~~~~~~~~~~~
@@ -29,29 +29,29 @@ With Ground Truth (``actual_load`` is present in the test csv)
 
 .. code:: ipython3
 
-    !python '../src/test.py'  --model_name 'CatBoost' --model_path '../src/results/pre-trained_models/CatBoost.joblib' --data_path '../data/infer_midlats'  --results_path '../data/midlats/results'
+    !python '../src/test.py'  --model_name 'CatBoost' --model_path '../src/pre-trained_models/CatBoost.joblib' --data_path '../data/infer_midlats'  --results_path '../data/midlats/results'
 
 
 .. parsed-literal::
 
-    MAPE  Dec  : 100.96611384246981
-    MAPE  Nov  : 108.86358928749473
-    MAPE  Sept  : 194.6900609800412
-    MAPE  Oct  : 116.71573239977016
-    MAPE  Aug  : 302.66263552492586
-    MAPE  July  : 356.2327529057079
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_predicted.png
+    MAPE July : 380.44795759521344
+    MAPE Aug : 283.7487728040964
+    MAPE Sept : 203.97476414457114
+    MAPE Oct : 117.19251658203949
+    MAPE Nov : 105.94428641567805
+    MAPE Dec : 99.29645055040669
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_predicted.html
 
 
 Inference CSV
@@ -103,40 +103,40 @@ Average Percentage Error between actual and predicted fuel load values
           <td>-35.125</td>
           <td>-69.375</td>
           <td>9.188477e+07</td>
-          <td>2.271982e+08</td>
-          <td>147.264254</td>
+          <td>8.817028e+07</td>
+          <td>4.042547</td>
         </tr>
         <tr>
           <th>1</th>
           <td>-31.625</td>
           <td>27.875</td>
           <td>7.486465e+07</td>
-          <td>5.049583e+08</td>
-          <td>574.494995</td>
+          <td>5.130763e+08</td>
+          <td>585.338529</td>
         </tr>
         <tr>
           <th>2</th>
           <td>-31.375</td>
           <td>28.375</td>
           <td>6.728101e+07</td>
-          <td>4.995424e+08</td>
-          <td>642.471533</td>
+          <td>4.373534e+08</td>
+          <td>550.039875</td>
         </tr>
         <tr>
           <th>3</th>
           <td>-31.125</td>
           <td>28.625</td>
           <td>9.200570e+07</td>
-          <td>5.052560e+08</td>
-          <td>449.157279</td>
+          <td>4.966761e+08</td>
+          <td>439.831873</td>
         </tr>
         <tr>
           <th>4</th>
           <td>-31.125</td>
           <td>29.625</td>
           <td>1.413486e+08</td>
-          <td>4.898777e+08</td>
-          <td>246.574236</td>
+          <td>4.879350e+08</td>
+          <td>245.199817</td>
         </tr>
       </tbody>
     </table>
@@ -144,52 +144,34 @@ Average Percentage Error between actual and predicted fuel load values
 
 
 
-Visualizing the plots generated
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: ipython3
-
-    actual=Image(filename='../data/midlats/results/midlats_July_actual.png')
-    predicted=Image(filename='../data/midlats/results/midlats_July_predicted.png')
-    display(actual,predicted)
-
-
-
-.. image:: _static/CatBoost_inference_8_0.png
-
-
-
-.. image:: _static/CatBoost_inference_8_1.png
-
-
 Without Ground Truth (``actual_load`` is not present in the test csv)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: ipython3
 
-    !python '../src/test.py'  --model_name 'CatBoost' --model_path '../src/results/pre-trained_models/CatBoost.joblib' --data_path '../data/infer_midlats'  --results_path '../data/midlats/results'
+    !python '../src/test.py'  --model_name 'CatBoost' --model_path '../src/pre-trained_models/CatBoost.joblib' --data_path '../data/infer_midlats'  --results_path '../data/midlats/results'
 
 
 .. parsed-literal::
 
-    MAPE  Dec  : 100.96611384246981
-    MAPE  Nov  : 108.86358928749473
-    MAPE  Sept  : 194.6900609800412
-    MAPE  Oct  : 116.71573239977016
-    MAPE  Aug  : 302.66263552492586
-    MAPE  July  : 356.2327529057079
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_predicted.png
+    MAPE July : 380.44795759521344
+    MAPE Aug : 283.7487728040964
+    MAPE Sept : 203.97476414457114
+    MAPE Oct : 117.19251658203949
+    MAPE Nov : 105.94428641567805
+    MAPE Dec : 99.29645055040669
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Nov_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_July_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Dec_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Aug_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Oct_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/midlats/results/midlats_Sept_predicted.html
 
 
 Inference CSV
@@ -236,40 +218,40 @@ Inference CSV
           <td>-35.125</td>
           <td>-69.375</td>
           <td>9.188477e+07</td>
-          <td>2.271982e+08</td>
-          <td>147.264254</td>
+          <td>8.817028e+07</td>
+          <td>4.042547</td>
         </tr>
         <tr>
           <th>1</th>
           <td>-31.625</td>
           <td>27.875</td>
           <td>7.486465e+07</td>
-          <td>5.049583e+08</td>
-          <td>574.494995</td>
+          <td>5.130763e+08</td>
+          <td>585.338529</td>
         </tr>
         <tr>
           <th>2</th>
           <td>-31.375</td>
           <td>28.375</td>
           <td>6.728101e+07</td>
-          <td>4.995424e+08</td>
-          <td>642.471533</td>
+          <td>4.373534e+08</td>
+          <td>550.039875</td>
         </tr>
         <tr>
           <th>3</th>
           <td>-31.125</td>
           <td>28.625</td>
           <td>9.200570e+07</td>
-          <td>5.052560e+08</td>
-          <td>449.157279</td>
+          <td>4.966761e+08</td>
+          <td>439.831873</td>
         </tr>
         <tr>
           <th>4</th>
           <td>-31.125</td>
           <td>29.625</td>
           <td>1.413486e+08</td>
-          <td>4.898777e+08</td>
-          <td>246.574236</td>
+          <td>4.879350e+08</td>
+          <td>245.199817</td>
         </tr>
       </tbody>
     </table>
@@ -277,15 +259,8 @@ Inference CSV
 
 
 
-.. code:: ipython3
+Visualizing the plots generated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    ### Visualizing the plots generated
-
-.. code:: ipython3
-
-    predicted=Image(filename='../data/midlats/results/midlats_July_predicted.png')
-    display(predicted)
-
-
-
-.. image:: _static/CatBoost_inference_14_0.png
+The plots are stored as html files that can be zoomed in upto the
+resolution of the data to view the predicted and actual values

@@ -31,29 +31,29 @@ With Ground Truth (``actual_load`` is present in the test csv)
 
 .. code:: ipython3
 
-    !python '../src/test.py'  --model_name 'LightGBM' --model_path '../src/results/pre-trained_models/LightGBM.joblib' --data_path '../data/infer_tropics'  --results_path '../data/tropics/results'
+    !python '../src/test.py'  --model_name 'LightGBM' --model_path '../src/pre-trained_models/LightGBM.joblib' --data_path '../data/infer_tropics'  --results_path '../data/tropics/results'
 
 
 .. parsed-literal::
 
-    MAPE  Nov  : 2702.06167971773
-    MAPE  July  : 1061.9047437881936
-    MAPE  Aug  : 8841.281290977906
-    MAPE  Oct  : 1272.2122715591902
-    MAPE  Dec  : 923.7465140033098
-    MAPE  Sept  : 3424.427580350033
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_predicted.png
+    MAPE July : 358.2370533961142
+    MAPE Aug : 4068.041474465497
+    MAPE Sept : 342.60497263841376
+    MAPE Oct : 407.02247341732897
+    MAPE Nov : 553.79772310129
+    MAPE Dec : 433.6634326468742
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_predicted.html
 
 
 Inference CSV
@@ -105,40 +105,40 @@ Average Percentage Error between actual and predicted fuel load values
           <td>-29.875</td>
           <td>29.125</td>
           <td>1.876688e+08</td>
-          <td>1.073418e+09</td>
-          <td>471.974876</td>
+          <td>6.441964e+08</td>
+          <td>243.262403</td>
         </tr>
         <tr>
           <th>1</th>
           <td>-29.875</td>
           <td>29.375</td>
           <td>2.971511e+08</td>
-          <td>8.908525e+08</td>
-          <td>199.797835</td>
+          <td>3.617555e+08</td>
+          <td>21.741276</td>
         </tr>
         <tr>
           <th>2</th>
           <td>-29.875</td>
           <td>29.625</td>
           <td>1.518198e+08</td>
-          <td>8.945157e+08</td>
-          <td>489.195632</td>
+          <td>3.590228e+08</td>
+          <td>136.479556</td>
         </tr>
         <tr>
           <th>3</th>
           <td>-29.875</td>
           <td>29.875</td>
           <td>3.022351e+08</td>
-          <td>9.046868e+08</td>
-          <td>199.332100</td>
+          <td>3.368480e+08</td>
+          <td>11.452295</td>
         </tr>
         <tr>
           <th>4</th>
           <td>-29.875</td>
           <td>30.125</td>
           <td>3.009002e+08</td>
-          <td>1.050267e+09</td>
-          <td>249.041709</td>
+          <td>3.559008e+08</td>
+          <td>18.278682</td>
         </tr>
       </tbody>
     </table>
@@ -146,53 +146,34 @@ Average Percentage Error between actual and predicted fuel load values
 
 
 
-Visualizing the plots generated
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: ipython3
-
-    actual=Image(filename='../data/tropics/results/tropics_July_actual.png')
-    predicted=Image(filename='../data/tropics/results/tropics_July_predicted.png')
-    display(actual,predicted)
-
-
-
-
-.. image:: _static/LightGBM_inference_8_0.png
-
-
-
-.. image:: _static/LightGBM_inference_8_1.png
-
-
 Without Ground Truth (``actual_load`` is not present in the test csv)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: ipython3
 
-    !python '../src/test.py'  --model_name 'LightGBM' --model_path '../src/results/pre-trained_models/LightGBM.joblib' --data_path '../data/infer_tropics'  --results_path '../data/tropics/results'
+    !python '../src/test.py'  --model_name 'LightGBM' --model_path '../src/pre-trained_models/LightGBM.joblib' --data_path '../data/infer_tropics'  --results_path '../data/tropics/results'
 
 
 .. parsed-literal::
 
-    MAPE  Nov  : 2702.06167971773
-    MAPE  July  : 1061.9047437881936
-    MAPE  Aug  : 8841.281290977906
-    MAPE  Oct  : 1272.2122715591902
-    MAPE  Dec  : 923.7465140033098
-    MAPE  Sept  : 3424.427580350033
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_predicted.png
-    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_actual.png
-    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_predicted.png
+    MAPE July : 358.2370533961142
+    MAPE Aug : 4068.041474465497
+    MAPE Sept : 342.60497263841376
+    MAPE Oct : 407.02247341732897
+    MAPE Nov : 553.79772310129
+    MAPE Dec : 433.6634326468742
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Nov_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Aug_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Dec_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Oct_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_July_predicted.html
+    Actual FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_actual.html
+    Predicted FL plot successfully generated! File saved to  ../data/tropics/results/tropics_Sept_predicted.html
 
 
 Inference CSV
@@ -239,40 +220,40 @@ Inference CSV
           <td>-29.875</td>
           <td>29.125</td>
           <td>1.876688e+08</td>
-          <td>1.073418e+09</td>
-          <td>471.974876</td>
+          <td>6.441964e+08</td>
+          <td>243.262403</td>
         </tr>
         <tr>
           <th>1</th>
           <td>-29.875</td>
           <td>29.375</td>
           <td>2.971511e+08</td>
-          <td>8.908525e+08</td>
-          <td>199.797835</td>
+          <td>3.617555e+08</td>
+          <td>21.741276</td>
         </tr>
         <tr>
           <th>2</th>
           <td>-29.875</td>
           <td>29.625</td>
           <td>1.518198e+08</td>
-          <td>8.945157e+08</td>
-          <td>489.195632</td>
+          <td>3.590228e+08</td>
+          <td>136.479556</td>
         </tr>
         <tr>
           <th>3</th>
           <td>-29.875</td>
           <td>29.875</td>
           <td>3.022351e+08</td>
-          <td>9.046868e+08</td>
-          <td>199.332100</td>
+          <td>3.368480e+08</td>
+          <td>11.452295</td>
         </tr>
         <tr>
           <th>4</th>
           <td>-29.875</td>
           <td>30.125</td>
           <td>3.009002e+08</td>
-          <td>1.050267e+09</td>
-          <td>249.041709</td>
+          <td>3.559008e+08</td>
+          <td>18.278682</td>
         </tr>
       </tbody>
     </table>
@@ -283,12 +264,5 @@ Inference CSV
 Visualizing the plots generated
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: ipython3
-
-    predicted=Image(filename='../data/tropics/results/tropics_July_predicted.png')
-    display(predicted)
-
-
-
-
-.. image:: _static/LightGBM_inference_14_0.png
+The plots are stored as html files that can be zoomed in upto the
+resolution of the data to view the predicted and actual values.

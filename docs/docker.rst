@@ -28,5 +28,4 @@ Steps
 The steps above mount the local code repository and data directory to a
 volume on the container, setting up the correct permissions so that you
 can keep any pretrained models or inference files even after the
-container is shut down. It uses multi-stage builds to keep the
-uncompressed image size ~1.8GB.
+container is shut down.

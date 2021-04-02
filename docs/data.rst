@@ -26,4 +26,4 @@ The data split into training, testing and validation is currently:
 - Validation: January 2016 -> June 2016
 - Testing: July 2016 -> December 2016.
 
-To change the split, modify ``data_split()`` in ``generate_io_arrays.py``
+To change the split, modify `data_split()` in `src/utils/generate_io_arrays.py`, and the month list in `src/test.py` used during inference.

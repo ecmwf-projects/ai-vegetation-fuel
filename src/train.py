@@ -35,8 +35,8 @@ LIST_FILE_NAMES = [
     "val",
     "test",
 ]  # File names for test,train and val dataframes
-NUM_ITERS = 2000  # NUM_ITERS is for number of boosting iterations
-
+NUM_ITERS_CAT = 1000  # number of boosting iterations
+NUM_ITERS_LIGHT = 600  # number of boosting iterations
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Train model")
@@ -78,13 +78,13 @@ if __name__ == "__main__":
     if model_name == "CatBoost":
         obj = CatBoost(dict_data["train"], dict_data["val"], dict_data["test"])
         model = obj.optimize(
-            num_iters=NUM_ITERS
+            num_iters=NUM_ITERS_CAT
         )  # num_iters is for number of boosting iterations
 
     elif model_name == "LightGBM":
         obj = LightGBM(dict_data["train"], dict_data["val"], dict_data["test"])
         model = obj.optimize(
-            num_iters=NUM_ITERS
+            num_iters=NUM_ITERS_LIGHT
         )  # num_iters is for number of boosting iterations
 
     neptune.stop()
@@ -97,8 +97,6 @@ if __name__ == "__main__":
         "Model file save at",
         dump(
             model,
-            os.path.join(
-                cwd, "src/results/pre-trained_models" + "/" + model_name + ".joblib"
-            ),
+            os.path.join(cwd, "src/pre-trained_models" + "/" + model_name + ".joblib"),
         ),
     )

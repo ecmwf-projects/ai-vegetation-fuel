@@ -221,7 +221,7 @@ if __name__ == "__main__":
                 + csv_file_path[0:7]
                 + "_"
                 + csv_file_path[15:-4]
-                + "_predicted.png"
+                + "_predicted.html"
             )  # extracting base file name and appending 'predicted'
             output_file_path_act = (
                 result_dir
@@ -229,7 +229,7 @@ if __name__ == "__main__":
                 + csv_file_path[0:7]
                 + "_"
                 + csv_file_path[15:-4]
-                + "_actual.png"
+                + "_actual.html"
             )  # extracting base file name and appending 'actual'
             month = csv_file_path[15:-4]  # extracting month name
 

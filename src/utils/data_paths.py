@@ -3,9 +3,9 @@
 from typing import List, Tuple
 
 # change file paths here
-agb_data = "/agb_avitabile_2010-2016_v3.nc"
+agb_data = "agb_avitabile_2010-2016_v3.nc"
 weather_anomalies_data = "weather_anomalies_2010-2016_v3.nc"
-ba_data = "/ba_2010-2016_v3.nc"
+ba_data = "ba_2010-2016_v3.nc"
 ba_fraction_data = "ba_fraction_2010-2016_v3.nc"
 fire_anomal_data = "fire_anomalies_2010-2016_v3.nc"
 spi_gpcc_data = "spi-gpcc_2010-2016_v4.nc"

@@ -23,7 +23,7 @@ This notebook explores the data assembled in notebook `data_preparation.ipynb`. 
 
 This notebook uses the H2O.ai AutoML framework to benchmark various possible data transformations for outcome and predictors. It also compares model results in case all versus non-redundant features are used. The final result is a pre-processed dataset that will be used for the final modelling step in `model_definition.ipynb`.
 
-### 4. Model definition
+### 4. Model definition and evaluation
 
 This notebook uses the H2O.ai AutoML framework to model transformed outcome and predictors. It visualises averaged results over a map and uses the H2O.ai explainability module to identify model limitations and possible future avenues for improvements.
 

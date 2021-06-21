@@ -143,7 +143,7 @@ Documentation is available at: [https://ml-fuel.readthedocs.io/en/latest/index.h
 
 
 ## Experiment 2
-Please refer to `notebooks/ecmwf/README.md` for a description of this experiment, instructions to install additional dependencies and the notebooks with the steps to perform the experiment.
+We employ an AutoML approach to predict dry matter using the H2O.ai AutoML framework. Please refer to `notebooks/ecmwf/README.md` for a description of this experiment, instructions to install additional dependencies and the notebooks with the steps to perform the experiment.
 
 
 ## Info

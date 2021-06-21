@@ -29,6 +29,11 @@ def fuelload(path_agb: str, path_ba: str, path_fl: str = None) -> xarray.Dataset
     agb_data.values[agb_data.values == AGB_THRESH] = np.nan
     ba_data.values[ba_data.values < BA_THRESH] = np.nan
 
+    # AGB units are Mg/h
+    # BA units are m2, therefore we convert BA to hectares.
+    ba_data = ba_data * 0.0001
+
+    # Now that units are consistent we calculate LOAD = AGB * BA
     fuel_load_dataset = agb_data * ba_data
 
     if path_fl is not None:

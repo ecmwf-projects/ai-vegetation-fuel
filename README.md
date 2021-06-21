@@ -28,7 +28,14 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
-This includes all the packages required for running the code in the repository.
+This includes all the packages required for running the code in the repository, with the exclusion of the notebooks in the folder `notebooks/ecmwf` (see `notebooks/ecmwf/README.md` for the additional dependencies to install).
+
+The content of this repository is split into 2 types of experiments:
+
+1. target is the fuel load = burned areas * above ground biomass
+2. target is dry matter = burned areas * above ground biomass * combustion coefficients / grid cell areas
+
+## Experiment 1
 
 ### Data Description
 7 years of global historical data, from 2010 - 2016 will be used for developing the machine learning models. All data used in this project is propietary and NOT meant for public release. Xarray, NumPy and netCDF libraries are used for working with the multi-dimensional geospatial data.
@@ -82,7 +89,7 @@ Args description:
       Where root_path is the root save path provided for pre-processing.py
      ```
 
-## Training
+### Training
 
 Entry-point for training is [src/train.py](src/train.py)
 ```
@@ -92,7 +99,7 @@ Args description:
       * `--exp_name`:  Name of the  training experiment used for logging.
 ```
 
-## Inference
+### Inference
 
 Entry-point for inference is [src/test.py](src/test.py)
 ```
@@ -103,20 +110,20 @@ Args description:
       * `--results_path`:  Directory where the result inference .csv files and .html visualizations are going to be stored.
 ```
 
-### Pre-trained models
+#### Pre-trained models
 Pre-trained models are available at:
 - [LightGBM.joblib](src/pre-trained_models/LightGBM.joblib)
 - [CatBoost.joblib](src/pre-trained_models/CatBoost.joblib)
 
 
-### Demo Notebooks
+#### Demo Notebooks
 Notebooks for training and inference:
 - [LightGBM_training.ipynb](notebooks/LightGBM_training.ipynb)
 - [LightGBM_inference.ipynb](notebooks/LightGBM_inference.ipynb)
 - [CatBoost_training.ipynb](notebooks/CatBoost_training.ipynb)
 - [CatBoost_inference.ipynb](notebooks/CatBoost_inference.ipynb)
 
-## Fuel Load Prediction Visualizations:
+### Fuel Load Prediction Visualizations:
 - CatBoost for Mid-Latitudes
 <img width="1025" alt="midlats-prediction-july16" src="https://user-images.githubusercontent.com/7680686/113362982-4d263500-936d-11eb-922e-5a0609e7a67e.png">
 
@@ -124,15 +131,19 @@ Notebooks for training and inference:
 <img width="1025" alt="tropics-prediction-july16" src="https://user-images.githubusercontent.com/7680686/113362967-45ff2700-936d-11eb-93a3-5ad380393f03.png">
 
 
-## Adding New Features:
+### Adding New Features:
 - Make sure the new dataset to be added is a single file in `.nc` format, containing data from 2010-16 and in 0.25x0.25 grid cell resolution.
 - Match the features of the new dataset with the existing features. This can be done by going through `notebooks/EDA_pre-processed_data.ipynb`.
 - Add the feature path as a variable to `src/utils/data_paths.py`. Further the path variable is needed to be added to either the time dependant or independant list (depending on which category it belongs to) present inside `export_feature_paths()`.
 - The model will now also be trained on the added feature while running src/train.py!
 
 
-## Documentation
+### Documentation
 Documentation is available at: [https://ml-fuel.readthedocs.io/en/latest/index.html](https://ml-fuel.readthedocs.io/en/latest/index.html).
+
+
+## Experiment 2
+Please refer to `notebooks/ecmwf/README.md` for a description of this experiment, instructions to install additional dependencies and the notebooks with the steps to perform the experiment.
 
 
 ## Info

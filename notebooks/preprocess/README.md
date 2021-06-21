@@ -12,47 +12,57 @@ directory that is also located at the same level as the notebooks. In our typica
 flow, we use symbolic links to achieve this, because often times such large datasets of 
 raw files are present on data disks mounted elsewhere. 
 
-For example, if the raw data is in `/data1/raw_data/`, and we wish to store the processed
-data in `/data1/preprocessed_data/`, we would create symbolic links:
+For example, if the working directory is `~/ai-vegetation-fuel/`, the raw data are in `/data1/raw_data/`, and we wish to store the processed
+data in `/data1/processed_data/`, we would create symbolic links:
 
 ```bash
-ln -s /data1/raw_data ./raw
-ln -s /data1/preprocess ./preprocess
+ln -s /data1/raw_data ./notebooks/preprocess/raw
+ln -s /data1/processed_data ./notebooks/preprocess/preprocess
 ```
 
-This should give you a directory structure like this:
+This should give you a directory structure like this (`ls -l ./notebooks/preprocess/`):
 
 ```bash
 .
+├── preprocess -> /data1/processed_data
+├── preprocess_agb.ipynb
 ├── preprocess_burned_area.ipynb
 ├── preprocess_climate_regions.ipynb
-├── preprocess_leaf_area_index.ipynb
-├── preprocess -> /data1/preprocessed_data
-├── preprocess_agb.ipynb
 ├── preprocess_fire_anomalies.ipynb
+├── preprocess_leaf_area_index.ipynb
 ├── preprocess_slopes.ipynb
-├── preprocessing_spi_gpcc.ipynb
+├── preprocess_spi_gpcc.ipynb
+├── preprocess_weather_anomalies.ipynb
 ├── raw -> /data1/raw_data
-└── preprocess_weather_anomalies.ipynb
+└── README.md
 ```
 
 You can then create a symlink in the root of the repository with the name `data/` to 
-where you store the preprocessed data to get the following tree:
+where you store the preprocessed data.
+
+```bash
+ln -s /data1/processed_data ./data
+```
+
+to get the following tree:
 
 ```bash
 .
 ├── data -> /data1/preprocessed_data
+├── dev-requirements.txt
 ├── docker
 ├── docs
 │   └── _static
+├── LICENSE
 ├── notebooks
 │   └── preprocess
 │       ├── preprocess -> /data1/preprocessed_data
 │       └── raw -> /data1/raw_data
+├── README.md
+├── requirements.txt
 └── src
     ├── models
     ├── pre-trained_models
-    ├── results
     └── utils
 ```
 
